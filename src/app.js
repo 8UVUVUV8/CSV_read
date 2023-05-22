@@ -38,7 +38,7 @@ function dataCheck(){
 
         if (splitedCsv[i].length != 5) {
           console.log("WRONG  " + splitedCsv[i])
-          wrongData.push(splitedCsv[i])
+          //wrongData.push(splitedCsv[i])
           //splitedCsv.splice(i,1);
         }
     }
