@@ -13,7 +13,6 @@ fs.createReadStream("./LottoSzamok.csv")
   console.log(error.message)
 })
 .on("end", function () {
-  console.log("finisheddsadas"),
   printAray()
 });
 
@@ -22,24 +21,32 @@ function printAray(){
         var row = csvData[i].toString();
         splitedCsv.push(row.split(";"));
     }
-    console.log(splitedCsv[0])
+    for (let i = 0; i < splitedCsv.length; i++) {
+      //console.log(splitedCsv[i])
+    }
+    console.log(' 27 , ' + splitedCsv.length)
+    console.log(" 28 , " + splitedCsv[498])
+    
     dataCheck()
 }
 
 function dataCheck(){
-    console.log(splitedCsv[0].length)
+    console.log('34 , ' + splitedCsv.length)
     for (let i = 0; i < csvData.length; i++) {
         console.log("i" + i)
+        console.log(csvData[i])
 
-        if (splitedCsv[i]?.length == 5) {
- 
-        }else{
-            wrongData.push(splitedCsv[i])
-            splitedCsv.splice(i,1);
+        if (splitedCsv[i].length != 5) {
+          console.log("WRONG  " + splitedCsv[i])
+          wrongData.push(splitedCsv[i])
+          //splitedCsv.splice(i,1);
         }
     }
-    console.log(splitedCsv.length)
-    for (let i = 0; i < wrongData.length; i++) {
-        console.log(wrongData[i])
-    }
+//    for (let i = 0; i < wrongData.length; i++) {
+//      console.log("wrongData" + wrongData[i])
+//
+//    }
+//    for (let i = 0; i < splitedCsv.length; i++) {
+//      console.log(splitedCsv[i])
+//    }
 }
